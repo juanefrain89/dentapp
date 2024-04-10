@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route,  HashRouter  } from 'react-router-dom';
 import '/src/assets/css/style.css';
 import Login from './pages/auth/login/Login';
 import { Dashboard } from './pages/investors/dashboard/Dashboard';
@@ -57,8 +57,8 @@ function App() {
 
 
         <div>
-            <I18nextProvider i18n={i18next}>
-                <BrowserRouter>
+           
+                <HashRouter basename="/app">
                     <Routes>
                         
                        
@@ -78,8 +78,8 @@ function App() {
                            
                     
                     </Routes>
-                </BrowserRouter>
-            </I18nextProvider>
+                </HashRouter>
+      
         </div>
     )
 }
