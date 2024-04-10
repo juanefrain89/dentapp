@@ -1,9 +1,7 @@
-import { BrowserRouter, Routes, Route,HashRouter} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import '/src/assets/css/style.css';
 import Login from './pages/auth/login/Login';
 import { Dashboard } from './pages/investors/dashboard/Dashboard';
-
-
 import { Events } from './pages/investors/events/Events';
 import Referidos from './pages/investors/referrals/Referidos';
 import i18next from "i18next";
@@ -17,10 +15,7 @@ import Registrar from './pages/auth/register/Registrar';
 import Personalizar from './pages/investors/dashboard/Personalizar';
 import NuevaFecha from './pages/investors/events/NuevaFecha';
 
-
-
 function App() {
-    
     let getLanguageStore = localStorage.getItem("language")
 
     i18next.init({
@@ -40,42 +35,33 @@ function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        
-         localStorage.getItem('users');
+        localStorage.getItem('users');
 
         if (localStorage.getItem('users')) {
-           
             setIsLoggedIn(true);
-            
         } else {
-           
             setIsLoggedIn(false);
         }
     }, []);
 
     return (
-
-
         <div>
             <I18nextProvider i18n={i18next}>
-                <HashRouter>
+                <BrowserRouter basename="/">
                     <Routes>
                         <Route path='/' element={<Referidos/>} />
-                       <Route path='/registrar' element={<Registrar/>} />
-                      
-                            <>
-                               
-                                <Route path='/dashboard' element={<Dashboard />} />
-                                <Route path='/usuarios' element={<Usuarios />} />
-                                <Route path='/usu' element={<Referidos />} />
-                                <Route path='/events' element={<Events />} />
-                                <Route path='/contratos' element={<Usuarios />} />
-                                <Route path='/personalizar' element={<Personalizar />} />
-                                <Route path='/p' element={<NuevaFecha />} />                                                          
-                            </>
-                    
-                   </Routes>
-                </HashRouter>
+                        <Route path='/registrar' element={<Registrar/>} />
+                        <>
+                            <Route path='/dashboard' element={<Dashboard />} />
+                            <Route path='/usuarios' element={<Usuarios />} />
+                            <Route path='/usu' element={<Referidos />} />
+                            <Route path='/events' element={<Events />} />
+                            <Route path='/contratos' element={<Usuarios />} />
+                            <Route path='/personalizar' element={<Personalizar />} />
+                            <Route path='/p' element={<NuevaFecha />} />                                                          
+                        </>
+                    </Routes>
+                </BrowserRouter>
             </I18nextProvider>
         </div>
     )
