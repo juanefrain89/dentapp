@@ -58,7 +58,7 @@ function App() {
 
         <div>
             <I18nextProvider i18n={i18next}>
-                <HashRouter basename="/app">
+                <HashRouter>
                     <Routes>
                         <Route path='/' element={<Referidos/>} />
                        <Route path='/registrar' element={<Registrar/>} />
