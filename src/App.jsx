@@ -60,11 +60,10 @@ function App() {
             <I18nextProvider i18n={i18next}>
                 <BrowserRouter>
                     <Routes>
-                        <Route path='/' element={<Referidos/>} />
-                       <Route path='/registrar' element={<Registrar/>} />
-                        {isLoggedIn ? (
+                        
+                       
                             <>
-                                <Route path='/' element={<Login />} />
+                                <Route path='/' element={<Referidos/>} />
                                 <Route path='/dashboard' element={<Dashboard />} />
                                 <Route path='/usuarios' element={<Usuarios />} />
                                 <Route path='/usu' element={<Referidos />} />
@@ -73,11 +72,11 @@ function App() {
                                 <Route path='/personalizar' element={<Personalizar />} />
                                 <Route path='/p' element={<NuevaFecha />} />                                                          
                             </>
-                        ) : (
-                            <Route path='/' element={<Login />} />
+                   
+                          
                            
                            
-                        )}
+                    
                     </Routes>
                 </BrowserRouter>
             </I18nextProvider>
