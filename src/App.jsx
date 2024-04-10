@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route,  HashRouter,Switch  } from 'react-router-dom';
+import { BrowserRouter, Routes, Route,HashRouter,Switch } from 'react-router-dom';
 import '/src/assets/css/style.css';
 import Login from './pages/auth/login/Login';
 import { Dashboard } from './pages/investors/dashboard/Dashboard';
@@ -57,13 +57,14 @@ function App() {
 
 
         <div>
-           
+            <I18nextProvider i18n={i18next}>
                 <HashRouter basename="/app">
                     <Switch>
-                        
-                       
+                        <Route path='/' element={<Referidos/>} />
+                       <Route path='/registrar' element={<Registrar/>} />
+                        {isLoggedIn ? (
                             <>
-                                <Route path='/' element={<Referidos/>} />
+                                <Route path='/' element={<Login />} />
                                 <Route path='/dashboard' element={<Dashboard />} />
                                 <Route path='/usuarios' element={<Usuarios />} />
                                 <Route path='/usu' element={<Referidos />} />
@@ -72,14 +73,14 @@ function App() {
                                 <Route path='/personalizar' element={<Personalizar />} />
                                 <Route path='/p' element={<NuevaFecha />} />                                                          
                             </>
-                   
-                          
+                        ) : (
+                            <Route path='/' element={<Login />} />
                            
                            
-                    
-                    </Switch>
+                        )}
+                   </Switch>
                 </HashRouter>
-      
+            </I18nextProvider>
         </div>
     )
 }
