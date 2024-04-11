@@ -65,7 +65,7 @@ const rol = localStorage.getItem("rol")
                                     
                                     <ul className='mb-4 p-3 position-sticky top-5'>
                 
-                                        <li><a href="https://dentapp-w1ug.vercel.app/dashboard"
+                                        <li><a href="https://dentapp-w1ug.vercel.app/#/dashboard"
                                                 className={active}><img src={dash} className='icon-image' alt="" /> <span>{t('pages.dashboard')}</span></a></li>
                                       
 
@@ -74,7 +74,7 @@ const rol = localStorage.getItem("rol")
                                       
    { rol == 'administrador' ? (
         <li>
-            <a href="https://dentapp-w1ug.vercel.app/usu" className={active}>
+            <a href="https://dentapp-w1ug.vercel.app/#/usu" className={active}>
                 <img src={usuarios} className='icon-image' alt="" /> 
                 <span>{t('clientes')}</span>
             </a>
