@@ -65,8 +65,8 @@ const rol = localStorage.getItem("rol")
                                     
                                     <ul className='mb-4 p-3 position-sticky top-5'>
                 
-                                        <li><a href="https://dentapp-w1ug.vercel.app/#/dashboard"
-                                                className={active}><img src={dash} className='icon-image' alt="" /> <span>{t('pages.dashboard')}</span></a></li>
+                                        <li><NavLink to='/dashboard' 
+                                                className={active}><img src={dash} className='icon-image' alt="" /> <span>{t('pages.dashboard')}</span></NavLink></li>
                                       
 
 
@@ -74,23 +74,23 @@ const rol = localStorage.getItem("rol")
                                       
    { rol == 'administrador' ? (
         <li>
-            <a href="https://dentapp-w1ug.vercel.app/#/usu" className={active}>
+            <NavLink to='/usu' className={active}>
                 <img src={usuarios} className='icon-image' alt="" /> 
                 <span>{t('clientes')}</span>
-            </a>
+            </NavLink>
         </li>
     ) : (
-        <a href='https://dentapp-w1ug.vercel.app/#/personalizar' className={active}>
+        <NavLink to='/personalizar' className={active}>
         <img src={usuarios} className='icon-image' alt="" /> 
         <span>{t('mis datos')}</span>
-    </a>
+    </NavLink>
     )}
 
                                         
-                                        <li><a href='https://dentapp-w1ug.vercel.app/#/usuarios' 
-                                                className={active}><img src={contratos} className='icon-image' alt="" /> <span>{t('atrasar citas')}</span></a></li>
-                                         <li><a href='https://dentapp-w1ug.vercel.app/#/events' 
-                                                className={active}><img src={eventos} className='icon-image' alt="" /> <span>{t('citas del mes')}</span></a></li>
+                                        <li><NavLink to='/usuarios' 
+                                                className={active}><img src={contratos} className='icon-image' alt="" /> <span>{t('atrasar citas')}</span></NavLink></li>
+                                         <li><NavLink to='/events' 
+                                                className={active}><img src={eventos} className='icon-image' alt="" /> <span>{t('citas del mes')}</span></NavLink></li>
 
                                     </ul>
 
