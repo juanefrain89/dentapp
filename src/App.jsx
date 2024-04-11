@@ -65,7 +65,7 @@ function App() {
                       
                             <>
                                
-                                <Route path='#/dashboard' element={<Dashboard />} />
+                                <Route path='/dashboard' element={<Dashboard />} />
                                 <Route path='/usuarios' element={<Usuarios />} />
                                 <Route path='/usu' element={<Referidos />} />
                                 <Route path='/events' element={<Events />} />
