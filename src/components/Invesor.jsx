@@ -80,17 +80,17 @@ const rol = localStorage.getItem("rol")
             </a>
         </li>
     ) : (
-        <NavLink to='/personalizar' className={active}>
+        <a href='https://dentapp-w1ug.vercel.app/#/personalizar' className={active}>
         <img src={usuarios} className='icon-image' alt="" /> 
         <span>{t('mis datos')}</span>
-    </NavLink>
+    </a>
     )}
 
                                         
-                                        <li><NavLink to='/usuarios' 
-                                                className={active}><img src={contratos} className='icon-image' alt="" /> <span>{t('atrasar citas')}</span></NavLink></li>
-                                         <li><NavLink to='/events' 
-                                                className={active}><img src={eventos} className='icon-image' alt="" /> <span>{t('citas del mes')}</span></NavLink></li>
+                                        <li><a href='https://dentapp-w1ug.vercel.app/#/usuarios' 
+                                                className={active}><img src={contratos} className='icon-image' alt="" /> <span>{t('atrasar citas')}</span></a></li>
+                                         <li><a href='https://dentapp-w1ug.vercel.app/#/events' 
+                                                className={active}><img src={eventos} className='icon-image' alt="" /> <span>{t('citas del mes')}</span></a></li>
 
                                     </ul>
 
